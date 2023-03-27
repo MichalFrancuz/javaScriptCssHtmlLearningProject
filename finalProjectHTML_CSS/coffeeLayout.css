@@ -1,0 +1,162 @@
+.brand { 
+    font-family: system-ui;
+    font-weight: bold;
+    text-align: center; 
+    font-variant-caps: small-caps;
+    font-variation-settings: 'wght' 850;
+    color: black;
+  }
+
+.brand-header{
+    grid-area: brand1;
+    background-color: gold;
+}
+
+.menu{
+    background-color: rgba(255, 217, 0, 0.582);
+    border-bottom-left-radius: 20px 20px;
+    border-bottom-right-radius: 20px 20px;
+    border-top-left-radius: 20px 20px;
+    border-top-right-radius: 20px 20px;
+    border: 10px solid white;
+}
+
+.menu-menu {
+    padding: 20px 15px;
+}
+
+.menu-title {
+    color: rgb(198, 93, 41);
+    margin-left: 15px;
+}
+
+.item {
+    margin-left: 15px;
+}
+
+.item-2 {
+    margin-left: 50px;
+    color: rgb(234, 100, 34);
+}
+
+.spec {
+    margin-left: 50%;
+}
+
+.input-style {
+    background-color: rgb(235, 229, 194);
+}
+
+.input-block {
+    position: relative;
+}
+
+.input-block input {
+    font-weight: 500;
+    color: black;
+    width: 90%;
+    padding: 10px 15px;
+    border-radius: 1rem;
+    border: 2px solid  rgb(198, 93, 41);
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.input-block2 {
+    position: relative;
+}
+
+.input-block2 input {
+    font-weight: 500;
+    color: black;
+    width: auto;
+    padding: 10px 15px;
+    border-radius: 1rem;
+    border: 2px solid  rgb(198, 93, 41);
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.input-block2 .placeholder {
+    position: absolute;
+    margin: 17px 0;
+    padding: 0 4px;
+    font-family: Roboto, sans-serif;
+    color:  #6c757d;
+    align-items: center;
+    font-size: 10px;
+    bottom: 15px;
+    left: 37px;
+    background: rgb(235, 229, 194);
+}
+
+.input-block .placeholder {
+    position: absolute;
+    margin: 17px 0;
+    padding: 0 4px;
+    font-family: Roboto, sans-serif;
+    color:  #6c757d;
+    align-items: center;
+    font-size: 10px;
+    bottom: 15px;
+    left: 37px;
+    background: rgb(235, 229, 194);
+}
+
+.summary{
+    background-color: white;
+    margin-left: 50%;
+    padding: 20px 15px;
+}
+
+.summary-price{
+    background-color: white;
+    margin-left: 50%;
+    padding: 20px 15px;
+}
+
+.place-order{
+    text-align: center;
+    background-color: rgba(255, 217, 0, 0.774);
+    height: 60px;
+}
+
+.menu-menu{
+ grid-area: menu-menu1;
+}
+
+.menu-name{
+ grid-area: menu-name1;
+}
+
+.menu-payment{
+    grid-area: menu-payment1;
+}
+
+.summary{
+    grid-area: summary1;
+}
+
+.summary-price{
+    grid-area: summary2;
+}
+
+.place-order{
+    grid-area: place-order1;
+}
+
+.page {
+    display: grid;
+    grid-template-areas:
+      "brand1 brand1"
+      "menu-menu1  menu-name1"
+      "menu-menu1  menu-payment1"
+      "summary1 summary2"
+      "place-order1 place-order1";
+}
+
+.line-1 {
+    margin-left: 15px;
+    margin-right: 15px;
+    border-top: 1px solid rgb(234, 100, 34);
+  }
