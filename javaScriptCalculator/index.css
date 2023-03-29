@@ -1,0 +1,114 @@
+.screen {
+    grid-area: screen1;
+    text-align: end;
+}
+
+.C {
+    grid-area: CC;
+}
+
+.arrow {
+    grid-area: arrow1;
+}
+
+.divide {
+    grid-area: divide1;
+}
+
+.seven {
+    grid-area: seven1;
+}
+
+.eight {
+    grid-area: eight1;
+}
+
+.nine {
+    grid-area: nine1;
+}
+
+.x {
+    grid-area: xx;
+}
+
+.four {
+    grid-area: four1;
+}
+
+.five {
+    grid-area: five1;
+}
+
+.six {
+    grid-area: six1;
+}
+
+.minus {
+    grid-area: minus1;
+}
+
+.one {
+    grid-area: one1;
+}
+
+.two {
+    grid-area: two1;
+}
+
+.three {
+    grid-area: three1;
+}
+
+.pluse {
+    grid-area: pluse1;
+}
+
+.zero {
+    grid-area: zero1;
+}
+
+.equals {
+    grid-area: equals1;
+}
+
+.page {
+    display: grid;
+    grid-template-areas:
+      "screen1 screen1 screen1 screen1"
+      "CC  CC arrow1 divide1"
+      "seven1 eight1 nine1 xx"
+      "four1  five1 six1 minus1"
+      "one1 two1 three1 pluse1"
+      "zero1 zero1 zero1 equals1";
+}
+
+div {
+    border: 1px solid black;
+    height: 105px;
+  }
+
+button {
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center; /* vertical centering */
+    height: 100%;
+    width: 100%;
+    font-size: 40px;
+}
+
+.symbol {
+    background-color: orange;
+    color: white;
+}
+
+.screen {
+    background-color: black;
+    color: white;
+    height: 80px;
+}
+
+  .page {
+    width: 400px;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
