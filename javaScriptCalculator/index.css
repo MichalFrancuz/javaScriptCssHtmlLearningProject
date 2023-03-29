@@ -1,74 +1,106 @@
 .screen {
     grid-area: screen1;
-    text-align: end;
+    text-align: center;
+    border-bottom: solid black;
+    width: 404px;
 }
 
 .C {
     grid-area: CC;
+    border-right: solid black;
+    border-bottom: solid black;
+    width: 202px;
 }
 
 .arrow {
     grid-area: arrow1;
+    border-right: solid black;
+    border-bottom: solid black;
 }
 
 .divide {
     grid-area: divide1;
+    border-bottom: solid black;
 }
 
 .seven {
     grid-area: seven1;
+    border-right: solid black;
+    border-bottom: solid black;
 }
 
 .eight {
     grid-area: eight1;
+    border-right: solid black;
+    border-bottom: solid black;
 }
 
 .nine {
     grid-area: nine1;
+    border-right: solid black;
+    border-bottom: solid black;
 }
 
 .x {
     grid-area: xx;
+    border-bottom: solid black;
 }
 
 .four {
     grid-area: four1;
+    border-right: solid black;
+    border-bottom: solid black;
 }
 
 .five {
     grid-area: five1;
+    border-right: solid black;
+    border-bottom: solid black;
 }
 
 .six {
     grid-area: six1;
+    border-right: solid black;
+    border-bottom: solid black;
 }
 
 .minus {
     grid-area: minus1;
+    border-bottom: solid black;
 }
 
 .one {
     grid-area: one1;
+    border-right: solid black;
+    border-bottom: solid black;
 }
 
 .two {
     grid-area: two1;
+    border-right: solid black;
+    border-bottom: solid black;
 }
 
 .three {
     grid-area: three1;
+    border-right: solid black;
+    border-bottom: solid black;
 }
 
 .pluse {
     grid-area: pluse1;
+    border-bottom: solid black;
 }
 
 .zero {
     grid-area: zero1;
+    border-right: solid black;
+    width: 303px;
 }
 
-.equals {
+.equal {
     grid-area: equals1;
+    border-left: solid black;
 }
 
 .page {
@@ -83,8 +115,11 @@
 }
 
 div {
-    border: 1px solid black;
-    height: 105px;
+    height: 100px;
+  }
+
+  .normal-size {
+    width: 100px;
   }
 
 button {
@@ -108,7 +143,10 @@ button {
 }
 
   .page {
-    width: 400px;
     margin-left: 30%;
     margin-right: 30%;
+  }
+
+  .js-target {
+    color: white;
   }
