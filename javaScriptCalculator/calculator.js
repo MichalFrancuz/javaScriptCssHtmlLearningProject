@@ -16,51 +16,135 @@ const x = document.querySelector(".x")
 const minus = document.querySelector(".minus")
 const pluse = document.querySelector(".pluse")
 const equal = document.querySelector(".equal")
+const arrow = document.querySelector('.arrow')
+let equals = ''
+let numberFirst = ''
+let numberSecond = ''
 C.addEventListener("click", function () {
-    newScreen.innerText = ""
+    newScreen.innerText = '0'
 })
+arrow.addEventListener('click', function () {
+    newScreen.innerText = '0'
+})
+
+
+
 seven.addEventListener("click", function () {
-    newScreen.innerText += "7"
+    if (newScreen.innerText === '0') {
+        newScreen.innerText = '7'
+    } else {
+        newScreen.innerText += '7'
+    }
 })
 eight.addEventListener("click", function () {
-    newScreen.innerText += "8"
+    if (newScreen.innerText === '0') {
+        newScreen.innerText = '8'
+    } else {
+        newScreen.innerText += '8'
+    }
 })
 nine.addEventListener("click", function () {
-    newScreen.innerText += "9"
+    if (newScreen.innerText === '0') {
+        newScreen.innerText = '9'
+    } else {
+        newScreen.innerText += '9'
+    }
 })
 four.addEventListener("click", function () {
-    newScreen.innerText = 4
+    if (newScreen.innerText === '0') {
+        newScreen.innerText = '4'
+    } else {
+        newScreen.innerText += '4'
+    }
 })
 five.addEventListener("click", function () {
-    newScreen.innerText = 5
+    if (newScreen.innerText === '0') {
+        newScreen.innerText = '5'
+    } else {
+        newScreen.innerText += '5'
+    }
 })
 six.addEventListener("click", function () {
-    newScreen.innerText = 6
+    if (newScreen.innerText === '0') {
+        newScreen.innerText = '6'
+    } else {
+        newScreen.innerText += '6'
+    }
 })
 one.addEventListener("click", function () {
-    newScreen.innerText = 1
+    if (newScreen.innerText === '0') {
+        newScreen.innerText = '1'
+    } else {
+        newScreen.innerText += '1'
+    }
 })
 two.addEventListener("click", function () {
-    newScreen.innerText = 2
+    if (newScreen.innerText === '0') {
+        newScreen.innerText = '2'
+    } else {
+        newScreen.innerText += '2'
+    }
 })
 three.addEventListener("click", function () {
-    newScreen.innerText = 3
+    if (newScreen.innerText === '0') {
+        newScreen.innerText = '3'
+    } else {
+        newScreen.innerText += '3'
+    }
 })
 zero.addEventListener("click", function () {
-    newScreen.innerText = 0
+    if (newScreen.innerText === '0') {
+        newScreen.innerText = '0'
+    } else {
+        newScreen.innerText += '0'
+    }
 })
+
+
+
 divide.addEventListener("click", function () {
-    newScreen.innerText = ""
+    numberFirst = newScreen.innerText + ' '
+    newScreen.innerText = '0'
+
+    console.log(numberFirst)
 })
 x.addEventListener("click", function () {
-    newScreen.innerText = ""
+    numberFirst = newScreen.innerText
+    newScreen.innerText = '0'
+
+    console.log(numberFirst)
 })
 minus.addEventListener("click", function () {
-    newScreen.innerText = ""
+    numberFirst = newScreen.innerText + ' ' + ' ' + ' '
+    newScreen.innerText = '0'
+
+    console.log(numberFirst)
 })
 pluse.addEventListener("click", function () {
-    newScreen.innerText = ""
+    numberFirst = newScreen.innerText + '   '
+    newScreen.innerText = '0'
+
+    console.log(numberFirst)
 })
+
+
+
 equal.addEventListener("click", function () {
-    newScreen.innerText = ""
+    if (numberFirst === newScreen.innerText + ' ') {
+        numberSecond = newScreen.innerText
+        newScreen.innerText = numberFirst / numberSecond
+        console.log(numberSecond)
+    }
+    if (numberFirst === newScreen.innerText * numberSecond) {
+        numberSecond = newScreen.innerText
+        newScreen.innerText = numberFirst * numberSecond
+        console.log(numberSecond)
+    }
+    if (numberFirst === newScreen.innerText + ' ' + ' ' + ' ') {
+        numberSecond = newScreen.innerText
+        newScreen.innerText = numberFirst - numberSecond
+        console.log(numberSecond)
+    }
+
+    console.log(newScreen.innerText)
 })
