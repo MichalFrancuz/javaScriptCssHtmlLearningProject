@@ -17,14 +17,22 @@ const minus = document.querySelector(".minus")
 const pluse = document.querySelector(".pluse")
 const equal = document.querySelector(".equal")
 const arrow = document.querySelector('.arrow')
-let equals = ''
-let numberFirst = ''
-let numberSecond = ''
+
+let equals = 0
+let numberFirst = 0
+let numberSecond = 0
+
 C.addEventListener("click", function () {
     newScreen.innerText = '0'
 })
 arrow.addEventListener('click', function () {
-    newScreen.innerText = '0'
+    let myFunc = num => Number(num)
+    const intArr = Array.from(String(newScreen.innerText), myFunc)
+    let newNumber = intArr.pop()
+    newScreen.innerText = intArr
+    
+    console.log(newNumber)
+    console.log(intArr)
 })
 
 
@@ -101,28 +109,35 @@ zero.addEventListener("click", function () {
 })
 
 
-
+let counterDivide = 0
+let counterX = 0
+let counterMinus = 0
+let counterPluse = 0
 divide.addEventListener("click", function () {
-    numberFirst = newScreen.innerText + ' '
+    numberFirst = newScreen.innerText
     newScreen.innerText = '0'
+    counterDivide++
 
     console.log(numberFirst)
 })
 x.addEventListener("click", function () {
     numberFirst = newScreen.innerText
     newScreen.innerText = '0'
+    counterX++
 
     console.log(numberFirst)
 })
 minus.addEventListener("click", function () {
-    numberFirst = newScreen.innerText + ' ' + ' ' + ' '
+    numberFirst = newScreen.innerText
     newScreen.innerText = '0'
+    counterMinus++
 
     console.log(numberFirst)
 })
 pluse.addEventListener("click", function () {
-    numberFirst = newScreen.innerText + '   '
+    numberFirst = newScreen.innerText
     newScreen.innerText = '0'
+    counterPluse++
 
     console.log(numberFirst)
 })
@@ -130,20 +145,30 @@ pluse.addEventListener("click", function () {
 
 
 equal.addEventListener("click", function () {
-    if (numberFirst === newScreen.innerText + ' ') {
+    if (counterDivide === 1) {
         numberSecond = newScreen.innerText
-        newScreen.innerText = numberFirst / numberSecond
+        newScreen.innerText = parseFloat(numberFirst) / parseFloat(numberSecond)
         console.log(numberSecond)
+        counterDivide = 0
     }
-    if (numberFirst === newScreen.innerText * numberSecond) {
+    if (counterX === 1) {
         numberSecond = newScreen.innerText
-        newScreen.innerText = numberFirst * numberSecond
+        newScreen.innerText = parseFloat(numberFirst) * parseFloat(numberSecond)
         console.log(numberSecond)
+        counterX = 0
     }
-    if (numberFirst === newScreen.innerText + ' ' + ' ' + ' ') {
+    if (counterMinus === 1) {
         numberSecond = newScreen.innerText
-        newScreen.innerText = numberFirst - numberSecond
+        newScreen.innerText = parseFloat(numberFirst) - parseFloat(numberSecond)
         console.log(numberSecond)
+        counterMinus = 0
+    }
+
+    if (counterPluse === 1) {
+        numberSecond = newScreen.innerText
+        newScreen.innerText = parseFloat(numberFirst) + parseFloat(numberSecond)
+        console.log(numberSecond)
+        counterPluse = 0
     }
 
     console.log(newScreen.innerText)
