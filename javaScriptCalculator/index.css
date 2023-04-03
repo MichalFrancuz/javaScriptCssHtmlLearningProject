@@ -1,6 +1,6 @@
 .screen {
     grid-area: screen1;
-    text-align: center;
+    text-align: right;
     border-bottom: solid black;
     width: 404px;
 }
@@ -132,8 +132,12 @@ button {
 }
 
 .symbol {
-    background-color: orange;
+    background-color: rgb(255, 166, 0);
     color: white;
+}
+
+.symbol:hover {
+    background-color: rgb(249, 180, 51);
 }
 
 .screen {
@@ -149,4 +153,7 @@ button {
 
   .js-target {
     color: white;
+    font-size: 40px;
+    position: relative;
+    bottom: 20px;
   }

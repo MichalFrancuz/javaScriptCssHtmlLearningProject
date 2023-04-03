@@ -26,10 +26,14 @@ C.addEventListener("click", function () {
     newScreen.innerText = '0'
 })
 arrow.addEventListener('click', function () {
-    let myFunc = num => Number(num)
+    let myFunc = num => String(num)
     const intArr = Array.from(String(newScreen.innerText), myFunc)
     let newNumber = intArr.pop()
-    newScreen.innerText = intArr
+    if (intArr.length === 0) {
+        newScreen.innerText = '0'
+    } else {
+        newScreen.innerText = newScreen.innerText.replace(newNumber, '')
+    }
     
     console.log(newNumber)
     console.log(intArr)
