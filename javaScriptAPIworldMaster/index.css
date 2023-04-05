@@ -1,0 +1,53 @@
+.logo {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    grid-area: logoL
+}
+.firstWord {
+    grid-area: firstWordF;
+}
+.secondWord {
+    grid-area: secondWordS;
+}
+.thirdWord {
+    grid-area: thirdWordT;
+}
+.fourthWord {
+    grid-area: fourthWordFo;
+}
+.fifthWord {
+    grid-area: fifthWordFif;
+}
+.sixthWord {
+    grid-area: sixthWordSi;
+}
+input {
+    width: 37px;
+    height: 37px;
+    margin: 5px;
+    border: 3px solid #ccc;
+}
+.line {
+    height: 3px;
+    background: black;
+    grid-area: lineL;
+}
+.nothing {
+    height: 60px;
+    background: white;
+    grid-area: nothingN;
+}
+.page {
+    justify-content: center;
+    display: grid;
+    grid-template-areas:
+      "logoL"
+      "lineL"
+      "nothingN"
+      "firstWordF"
+      "secondWordS"
+      "thirdWordT"
+      "fourthWordFo"
+      "fifthWordFif"
+      "sixthWordSi";
+}
