@@ -31,7 +31,12 @@ input {
     text-transform: uppercase;
     color: transparent;
     text-shadow: 0 0 0 #000000;
+    font-weight: bold;
 }
+input:focus {
+    /*outline: none;*/
+    border: 3px solid #ccc;
+  }
 .line {
     height: 3px;
     background: black;
