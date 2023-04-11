@@ -15,13 +15,12 @@ container.onkeydown = function(event) {
     let myLength = target.value.length;
     if (isLetter(event.key) && counter === 5) {
             target.value = target.value.slice(0, -1)
-            word += target.value
     }
     if (isLetter(event.key)) {
         word += target.value
     }
     if (event.key === 'Backspace') {
-        word += target.value.slice(0, 1)
+        word -= target.value.slice(0, word.length - 1)
         target.value = ''
     }
     if (myLength === 1) {
