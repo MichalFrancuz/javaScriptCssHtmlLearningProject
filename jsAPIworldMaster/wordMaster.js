@@ -10,13 +10,13 @@ function isLetter(letter) {
     event.preventDefault()
   }
 })
-container.onkeydown = function(event) {
+container.onkeyup = function(event) {
     let target = event.srcElement || event.target;
     let myLength = target.value.length;
     if (isLetter(event.key) && counter === 5) {
             target.value = target.value.slice(0, -1)
     }
-    if (isLetter(event.key)) {
+    if (isLetter(event.key) && counter < 5) {
         word += target.value
     }
     if (event.key === 'Backspace') {
