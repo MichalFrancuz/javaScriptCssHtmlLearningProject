@@ -6,7 +6,7 @@ let inputss = 'a'
 let row = 0
 let container = document.getElementsByClassName("word")[row]
 let container2 = document.getElementsByClassName("word")[row]
-const inputs = document.getElementsByClassName('input')
+const inputs = document.getElementsByClassName('first') // class name as number in html and increment this when user lose in press enter
 function isLetter(letter) {
     return /^[a-zA-Z]$/.test(letter)
   }
@@ -22,23 +22,13 @@ container.onkeyup = function(event) {
         word += target.value
     }
     if (event.key === 'Enter' && counter == 5) {
+        row++
         fifthValue = target.value
         const wordArray = word.split('')
         wordArray[4] = fifthValue
         let newWord = wordArray.join('')
         console.log(row)
         console.log(newWord)
-        if (document.getElementsByClassName("word")[row]) {
-            counter = 1
-            word = ''
-            fifthValue = ''
-            row++
-            container = document.getElementsByClassName('word')[row]
-            container2 = document.getElementsByClassName('word')[row]
-            if (container) {
-                inputs[0].focus() //here is problem with index - this index don't exist 
-            }
-        }
         const apiUrl = 'https://words.dev-apis.com/word-of-the-day?puzzle=1337'
         fetch(apiUrl)
         .then(response => response.json())
@@ -46,9 +36,18 @@ container.onkeyup = function(event) {
         console.log(data);
         if (data.word === newWord) {
             console.log('You win')
-        } 
+        }
         else {
-            console.log('You lose')
+            console.log('Try again')
+            if (document.getElementsByClassName("word")[row]) {
+                counter = 1
+                word = ''
+                fifthValue = ''
+                if (container) {
+                    inputs[0] = event.srcElement || event.target // I need to connect this if else (mylength) to jump between inputs with the same row
+                    inputs[0].focus() // every symbols work there, need to fix this
+                }
+            }
         }
         })
         .catch(error => {
