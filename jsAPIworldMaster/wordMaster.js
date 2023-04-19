@@ -2,11 +2,10 @@ const ignoreOtherSymbols = document.querySelector(".word")
 let counter = 1
 let word = ''
 let fifthValue = ''
-let inputss = 'a'
 let row = 0
 let container = document.getElementsByClassName("word")[row]
 let container2 = document.getElementsByClassName("word")[row]
-const inputs = document.getElementsByClassName('first') // class name as number in html and increment this when user lose in press enter
+let inputs = document.getElementsByClassName('first') // class name as number in html and increment this when user lose in press enter
 function isLetter(letter) {
     return /^[a-zA-Z]$/.test(letter)
   }
@@ -39,14 +38,13 @@ container.onkeyup = function(event) {
         }
         else {
             console.log('Try again')
-            if (document.getElementsByClassName("word")[row]) {
+            console.log(row)
+            if (document.getElementsByClassName("word")[5]) {
                 counter = 1
                 word = ''
                 fifthValue = ''
-                if (container) {
-                    inputs[0] = event.srcElement || event.target // I need to connect this if else (mylength) to jump between inputs with the same row
-                    inputs[0].focus() // every symbols work there, need to fix this
-                }
+                 // I need to connect this if else (mylength) to jump between inputs with the same row
+                inputs[1].focus() // every symbols work there, need to fix this
             }
         }
         })
