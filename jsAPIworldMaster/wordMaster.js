@@ -16,6 +16,7 @@ function addKeyUpEventListner(row) {
   let inputs = document.getElementsByClassName('first')[row]
   let container = document.getElementsByClassName("word")[row]
   let container2 = document.getElementsByClassName("word")[row]
+  const loader = document.querySelector("#loading")
   container.onkeyup = function(event) {
     let target = event.srcElement || event.target
     let myLength = target.value.length
@@ -28,6 +29,16 @@ function addKeyUpEventListner(row) {
           const wordArray = word.split('')
           wordArray[4] = fifthValue
           let newWord = wordArray.join('')
+          function displayLoading() {
+            loader.classList.add("display");
+            // to stop loading after some time
+            setTimeout(() => {
+                loader.classList.remove("display");
+            }, 5000)
+        }
+        // function hideLoading() {
+        //     loader.classList.remove("display");
+        // }
           const apiUrl = 'https://words.dev-apis.com/word-of-the-day?puzzle=1334'
           fetch(apiUrl)
           .then(response => response.json())
@@ -71,7 +82,6 @@ function addKeyUpEventListner(row) {
                     if (row === 1) {
                         const inputElementGray = document.getElementsByClassName('gray')[i]
                         inputElementGray.style.backgroundColor = 'gray'
-                        inputElementGray.style.textColor = 'white'
                         if (newWordLetter[i] === dataWordLetter[i]) {
                             const inputElementGreen = document.getElementsByClassName('green')[i]
                             inputElementGreen.style.backgroundColor = 'green'
