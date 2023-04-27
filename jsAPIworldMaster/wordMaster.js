@@ -29,20 +29,11 @@ function addKeyUpEventListner(row) {
           const wordArray = word.split('')
           wordArray[4] = fifthValue
           let newWord = wordArray.join('')
-          function displayLoading() {
-            loader.classList.add("display");
-            // to stop loading after some time
-            setTimeout(() => {
-                loader.classList.remove("display");
-            }, 5000)
-        }
-        // function hideLoading() {
-        //     loader.classList.remove("display");
-        // }
           const apiUrl = 'https://words.dev-apis.com/word-of-the-day?puzzle=1334'
           fetch(apiUrl)
           .then(response => response.json())
           .then(data => {
+            document.getElementById('loading').classList.add('active')
           console.log(data)
           if (data.word === newWord) {
               console.log('You win')
@@ -50,27 +41,39 @@ function addKeyUpEventListner(row) {
               for (let i = 0; i < 5; i++) {
                 if (row === 1) {
                 const inputElementGreen = document.getElementsByClassName('green')[i]
+                inputElementGreen.blur()
                 inputElementGreen.style.backgroundColor = 'green'
+                inputElementGreen.style.color = 'white'
                 }
                 if (row === 2) {
                 const inputElementGreen = document.getElementsByClassName('green2')[i]
+                inputElementGreen.blur()
                 inputElementGreen.style.backgroundColor = 'green'
+                inputElementGreen.style.color = 'white'
                 }
                 if (row === 3) {
                 const inputElementGreen = document.getElementsByClassName('green3')[i]
+                inputElementGreen.blur()
                 inputElementGreen.style.backgroundColor = 'green'
+                inputElementGreen.style.color = 'white'
                 }
                 if (row === 4) {
                 const inputElementGreen = document.getElementsByClassName('green4')[i]
+                inputElementGreen.blur()
                 inputElementGreen.style.backgroundColor = 'green'
+                inputElementGreen.style.color = 'white'
                 }
                 if (row === 5) {
                 const inputElementGreen = document.getElementsByClassName('green5')[i]
+                inputElementGreen.blur()
                 inputElementGreen.style.backgroundColor = 'green'
+                inputElementGreen.style.color = 'white'
                 }
                 if (row === 6) {
                 const inputElementGreen = document.getElementsByClassName('green6')[i]
+                inputElementGreen.blur()
                 inputElementGreen.style.backgroundColor = 'green'
+                inputElementGreen.style.color = 'white'
                 }
           }
         }
@@ -82,6 +85,7 @@ function addKeyUpEventListner(row) {
                     if (row === 1) {
                         const inputElementGray = document.getElementsByClassName('gray')[i]
                         inputElementGray.style.backgroundColor = 'gray'
+                        inputElementGray.style.color = 'white'
                         if (newWordLetter[i] === dataWordLetter[i]) {
                             const inputElementGreen = document.getElementsByClassName('green')[i]
                             inputElementGreen.style.backgroundColor = 'green'
@@ -107,6 +111,7 @@ function addKeyUpEventListner(row) {
                     if (row === 2) {
                         const inputElementGray = document.getElementsByClassName('gray2')[i]
                         inputElementGray.style.backgroundColor = 'gray'
+                        inputElementGray.style.color = 'white'
                         if (newWordLetter[i] === dataWordLetter[i]) {
                             const inputElementGreen = document.getElementsByClassName('green2')[i]
                             inputElementGreen.style.backgroundColor = 'green'
@@ -131,6 +136,7 @@ function addKeyUpEventListner(row) {
                     if (row === 3) {
                         const inputElementGray = document.getElementsByClassName('gray3')[i]
                         inputElementGray.style.backgroundColor = 'gray'
+                        inputElementGray.style.color = 'white'
                         if (newWordLetter[i] === dataWordLetter[i]) {
                             const inputElementGreen = document.getElementsByClassName('green3')[i]
                             inputElementGreen.style.backgroundColor = 'green'
@@ -155,6 +161,7 @@ function addKeyUpEventListner(row) {
                     if (row === 4) {
                         const inputElementGray = document.getElementsByClassName('gray4')[i]
                         inputElementGray.style.backgroundColor = 'gray'
+                        inputElementGray.style.color = 'white'
                         if (newWordLetter[i] === dataWordLetter[i]) {
                             const inputElementGreen = document.getElementsByClassName('green4')[i]
                             inputElementGreen.style.backgroundColor = 'green'
@@ -179,6 +186,7 @@ function addKeyUpEventListner(row) {
                     if (row === 5) {
                         const inputElementGray = document.getElementsByClassName('gray5')[i]
                         inputElementGray.style.backgroundColor = 'gray'
+                        inputElementGray.style.color = 'white'
                         if (newWordLetter[i] === dataWordLetter[i]) {
                             const inputElementGreen = document.getElementsByClassName('green5')[i]
                             inputElementGreen.style.backgroundColor = 'green'
@@ -202,7 +210,9 @@ function addKeyUpEventListner(row) {
                     }
                     if (row === 6) {
                         const inputElementGray = document.getElementsByClassName('gray6')[i]
+                        inputElementGray.blur()
                         inputElementGray.style.backgroundColor = 'gray'
+                        inputElementGray.style.color = 'white'
                         if (newWordLetter[i] === dataWordLetter[i]) {
                             const inputElementGreen = document.getElementsByClassName('green6')[i]
                             inputElementGreen.style.backgroundColor = 'green'
@@ -237,6 +247,7 @@ function addKeyUpEventListner(row) {
           })
           .catch(error => {
               console.error(error)
+              document.getElementById('loading').classList.remove('active')
           })
           }
       if (event.key === 'Backspace') {
