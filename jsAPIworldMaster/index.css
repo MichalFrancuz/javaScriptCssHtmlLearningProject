@@ -3,24 +3,31 @@
     text-align: center;
     grid-area: logoL
 }
+
 .firstWord {
     grid-area: firstWordF;
 }
+
 .secondWord {
     grid-area: secondWordS;
 }
+
 .thirdWord {
     grid-area: thirdWordT;
 }
+
 .fourthWord {
     grid-area: fourthWordFo;
 }
+
 .fifthWord {
     grid-area: fifthWordFif;
 }
+
 .sixthWord {
     grid-area: sixthWordSi;
 }
+
 input {
     width: 37px;
     height: 37px;
@@ -33,54 +40,67 @@ input {
     text-shadow: 0 0 0 #000000;
     font-weight: bold;
 }
+
+.input-transition {
+    transition: border-color 1s ease
+}
+
 input:focus {
     outline: none;
     border: 3px solid #ccc;
-  }
+}
+
 .line {
     height: 3px;
     background: black;
     grid-area: lineL;
 }
+
 .nothing {
     height: 60px;
     background: white;
-    grid-area: nothingN;
 }
-.page {
-    justify-content: center;
-    display: grid;
-    grid-template-areas:
-      "logoL"
-      "lineL"
-      "nothingN"
-      "loadingL"
-      "firstWordF"
-      "secondWordS"
-      "thirdWordT"
-      "fourthWordFo"
-      "fifthWordFif"
-      "sixthWordSi";
-}
+
 #loading {
+    grid-area: loadingL;
     display: none;
 }
+
 #loading.active {
-    grid-area: loadingL;
     display: block;
-    width: 50px;
-    height: 50px;
+    position: relative;
+    top: -103%;
+    width: 30px;
+    height: 30px;
     border: 5px solid #f3f3f3;
     border-top: 6px solid #9c41f2;
     border-radius: 100%;
-    /* margin: auto; */
+    margin: auto;
     animation: spin 1s infinite linear;
 }
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
+}
+
+.page {
+    justify-content: center;
+    display: grid;
+    grid-template-areas:
+        "logoL"
+        "lineL"
+        "nothingN"
+        "loadingL"
+        "firstWordF"
+        "secondWordS"
+        "thirdWordT"
+        "fourthWordFo"
+        "fifthWordFif"
+        "sixthWordSi";
 }
