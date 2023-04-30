@@ -16,7 +16,6 @@ function addKeyUpEventListner(row) {
     let inputs = document.getElementsByClassName('first')[row]
     let container = document.getElementsByClassName("word")[row]
     let container2 = document.getElementsByClassName("word")[row]
-    const loader = document.querySelector("#loading")
     container.onkeyup = function (event) {
         let target = event.srcElement || event.target
         let myLength = target.value.length
@@ -40,34 +39,76 @@ function addKeyUpEventListner(row) {
                 .then(response => {
                     if (response.status === 404) {
                         console.log(`Is not a valid word.`)
+                        document.getElementById('loading').classList.remove('active')
                         for (let i = 0; i < 5; i++) {
                             if (row === 1) {
                                 const ColorInputBorder = document.getElementsByClassName('green')[i]
                                 ColorInputBorder.classList.add('input-transition')
                                 let interval = setInterval(() => {
                                     ColorInputBorder.style.borderColor = 'red';
-                                }, 1)
+                                }, 250)
                                 setTimeout(() => {
                                     clearInterval(interval);
                                     ColorInputBorder.style.borderColor = '#ccc';
-                                }, 400)
+                                }, 500)
                             }
                             if (row === 2) {
-
+                                const ColorInputBorder = document.getElementsByClassName('green2')[i]
+                                ColorInputBorder.classList.add('input-transition')
+                                let interval = setInterval(() => {
+                                    ColorInputBorder.style.borderColor = 'red';
+                                }, 250)
+                                setTimeout(() => {
+                                    clearInterval(interval);
+                                    ColorInputBorder.style.borderColor = '#ccc';
+                                }, 500)
                             }
                             if (row === 3) {
-
+                                const ColorInputBorder = document.getElementsByClassName('green3')[i]
+                                ColorInputBorder.classList.add('input-transition')
+                                let interval = setInterval(() => {
+                                    ColorInputBorder.style.borderColor = 'red';
+                                }, 250)
+                                setTimeout(() => {
+                                    clearInterval(interval);
+                                    ColorInputBorder.style.borderColor = '#ccc';
+                                }, 500)
                             }
                             if (row === 4) {
-
+                                const ColorInputBorder = document.getElementsByClassName('green4')[i]
+                                ColorInputBorder.classList.add('input-transition')
+                                let interval = setInterval(() => {
+                                    ColorInputBorder.style.borderColor = 'red';
+                                }, 250)
+                                setTimeout(() => {
+                                    clearInterval(interval);
+                                    ColorInputBorder.style.borderColor = '#ccc';
+                                }, 500)
                             }
                             if (row === 5) {
-
+                                const ColorInputBorder = document.getElementsByClassName('green5')[i]
+                                ColorInputBorder.classList.add('input-transition')
+                                let interval = setInterval(() => {
+                                    ColorInputBorder.style.borderColor = 'red';
+                                }, 250)
+                                setTimeout(() => {
+                                    clearInterval(interval);
+                                    ColorInputBorder.style.borderColor = '#ccc';
+                                }, 500)
                             }
                             if (row === 6) {
-
+                                const ColorInputBorder = document.getElementsByClassName('green6')[i]
+                                ColorInputBorder.classList.add('input-transition')
+                                let interval = setInterval(() => {
+                                    ColorInputBorder.style.borderColor = 'red';
+                                }, 250)
+                                setTimeout(() => {
+                                    clearInterval(interval);
+                                    ColorInputBorder.style.borderColor = '#ccc';
+                                }, 500)
                             }
                         }
+                        row--
                         return
                     }
                     return response.json()
@@ -347,4 +388,9 @@ function addKeyUpEventListner(row) {
             }
         }
     }
+    // const inputOther = document.getElementsByClassName('border')
+    //     const inputFirst = document.getElementsByClassName('firstInput')
+    //     inputOther.addEventListener('click', () => {
+    //         inputFirst.focus()
+    //     })
 }
