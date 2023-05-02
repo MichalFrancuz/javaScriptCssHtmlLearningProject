@@ -121,7 +121,7 @@ function addKeyUpEventListner(row) {
                     .then(data => {
                         if (data) {
                             console.log(`Is a valid word.`)
-                            const apiUrl = 'https://words.dev-apis.com/word-of-the-day?puzzle=1500'
+                            const apiUrl = 'https://words.dev-apis.com/word-of-the-day'
                             fetch(apiUrl)
                                 .then(response => response.json())
                                 .then(data2 => {
