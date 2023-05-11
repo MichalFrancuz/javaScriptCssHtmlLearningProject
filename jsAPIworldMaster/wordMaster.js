@@ -1,3 +1,5 @@
+// add when one word is putting focus dont work when user click on somewhere
+
 function isLetter(letter) {
     return /^[a-zA-Z]$/.test(letter)
 }
