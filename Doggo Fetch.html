@@ -133,9 +133,9 @@
             // Try to use destructuring as much as you can
             let [http, slash, images, breeds, kindOfBreeds, nameJpg] = url.split('/');
             if (kindOfBreeds.includes('-')) {
-                correctBreed = kindOfBreeds.replace('-', ' ');
+                const correctBreed = kindOfBreeds.replace('-', ' ');
                 let [breed, standard] = correctBreed.split(' ');
-                reverseBreed = standard + ' ' + breed;
+                const reverseBreed = standard + ' ' + breed;
                 return reverseBreed;
             } else return kindOfBreeds;
         }
@@ -175,6 +175,14 @@
             // Create a button element whose name, value, and textContent properties are the value of that choice,
             // attach a "click" event listener with the buttonHandler function,
             // and append the button as a child of the options element
+            for (let choice of choicesArray) { // X
+                const button = document.createElement('button'); // V
+                button.name = choice; // V
+                button.value = choice; // V
+                button.textContent = choice; // V
+                button.addEventListener('click', buttonHandler); // X
+                options.appendChild(button); // X
+            }
 
         }
 
@@ -207,7 +215,8 @@
     // TODO 5
     // Asynchronously call the loadQuizData() function,
     // Then call renderQuiz() with the returned imageUrl, correctAnswer, and choices 
-
+     const [imgUrl, correctAnswer, choices] = await loadQuizData();
+     renderQuiz(imgUrl, correctAnswer, choices);
 
 
 
