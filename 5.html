@@ -9,14 +9,16 @@
   <title>Screen Readers</title>
   <style>
     @media (prefers-color-scheme: dark) {
-      .wrapper {
+      .main {
         background: black;
+        color: white;
       }
     }
 
     @media (prefers-color-scheme: light) {
-      .wrapper {
+      .main {
         background: white;
+        color: black;
       }
     }
   </style>
@@ -42,12 +44,28 @@
   </div>
   <script>
     document.getElementById('input').addEventListener('change', function () {
-      if (this.checked) {
-        document.getElementById('container2').classList.add('wrapper');
-        console.log('jej');
-      } else {
-        document.getElementById('container2').classList.remove('wrapper');
-        console.log('why');
+      if (window.matchMedia("(prefers-color-scheme: dark)")) {
+        if (this.checked) {
+          document.getElementById('container2').style.background = "white";
+          document.getElementById('container2').style.color = "black";
+          console.log('white for dark');
+        } else {
+          document.getElementById('container2').style.background = "black";
+          document.getElementById('container2').style.color = "white";
+          console.log('black for dark');
+        }
+      } 
+      if (window.matchMedia("(prefers-color-scheme: light)")) {
+        if (this.checked) {
+          document.getElementById('container2').style.background = "black";
+          document.getElementById('container2').style.color = "white";
+          console.log('black for light');
+        } else {
+          document.getElementById('container2').style.background = "white";
+          document.getElementById('container2').style.color = "black";
+          console.log('white for light');
+        }
+
       }
     })
   </script>
