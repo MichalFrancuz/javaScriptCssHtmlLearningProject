@@ -1,0 +1,66 @@
+<!-- My work: style and tabindex -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Screen Readers</title>
+  <style>
+    /* CSS to visually hide the anchor */
+    .visually-hidden {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    /* CSS to make the anchor visible when focused */
+    .visually-hidden:focus {
+      position: static;
+      top: auto;
+      left: auto;
+    }
+  </style>
+</head>
+
+<body>
+   <!-- Anchor with "Skip to content" body -->
+   <a tabindex="1" class="visually-hidden">Skip to content</a>
+  <header>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li>
+        <a href="../screen-readers/index.html">Screen Readers</a>
+      </li>
+      <li>
+        <a href="../accessible-html/index.html">Accessible HTML</a>
+      </li>
+      <li>
+        <a href="../aria/index.html">ARIA</a>
+      </li>
+      <li>
+        <a href="../focus-management/index.html">Focus Management</a>
+      </li>
+      <li>
+        <a href="../visual-considerations/index.html">Visual Considerations</a>
+      </li>
+      <li>
+        <a href="../tooling/index.html">Tooling</a>
+      </li>
+      <li>
+        <a href="../resources/index.html">Resources</a>
+      </li>
+    </ul>
+  </header>
+  <div>
+    <h1>Exercise 4</h1>
+    <p>
+      Let's make a skip link so that user's tabbing through can skip right
+      over the navigation and get to this main content!
+    </p>
+    <button tabindex="2">Skip to here!</button>
+  </div>
+</body>
+
+</html>
