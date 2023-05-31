@@ -44,8 +44,9 @@
   </div>
   <script>
     document.getElementById('input').addEventListener('change', function () {
-      if (window.matchMedia("(prefers-color-scheme: dark)")) {
-        if (this.checked) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        console.log('dark');
+        if (document.getElementById('input').checked) {
           document.getElementById('container2').style.background = "white";
           document.getElementById('container2').style.color = "black";
           console.log('white for dark');
@@ -54,9 +55,9 @@
           document.getElementById('container2').style.color = "white";
           console.log('black for dark');
         }
-      } 
-      if (window.matchMedia("(prefers-color-scheme: light)")) {
-        if (this.checked) {
+      } else {
+        console.log('light');
+        if (document.getElementById('input').checked) {
           document.getElementById('container2').style.background = "black";
           document.getElementById('container2').style.color = "white";
           console.log('black for light');
